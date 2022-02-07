@@ -1,12 +1,17 @@
+import lombok.Builder;
+import lombok.Getter;
+
 import java.time.LocalDate;
 import java.util.List;
 
+@Getter
+@Builder
 public class HospitalVisit {
     public String hospitalname;
     public String hospitallocation;
     private final List<LocalDate>date;
 
-    public HospitalVisit(String hospitalname, String hospitallocation, List<LocalDate> dates){
+  public HospitalVisit(String hospitalname, String hospitallocation, List<LocalDate> dates){
         this.hospitalname=hospitalname;
         this.hospitallocation=hospitallocation;
         this.date=dates;
@@ -16,12 +21,6 @@ public class HospitalVisit {
     }
     public List<LocalDate>getDates(){
         return this.date;
-    }
-    public String getHospitalname(){
-        return hospitalname;
-    }
-    public String getHospitallocation(){
-        return hospitallocation;
     }
     public int getTotalVisit(){
         return this.date.size();
